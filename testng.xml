@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Checkout" parallel="false">
+    <test name="Motorola purchase test">
+        <classes>
+            <class name="co.deepa.checkoutflow.MotoroloPurchase">
+            </class>
+        </classes>
+    </test> <!-- Test -->
+</suite>
