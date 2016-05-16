@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Checkout" parallel="false">
-    <test name="Motorola purchase test">
+<suite name="Checkout" parallel="false" >
+    <parameter name="email" value="deepareddy70@yahoo.com"/>
+    <parameter name="password" value="testing@123"/>
+    <test name="login" preserve-order="true">
         <classes>
-            <class name="co.deepa.checkoutflow.MotoroloPurchase">
-            </class>
+            <class name="co.deepa.checkoutflow.amazonlogin"/>
+        </classes>
+    </test> <!-- Test -->
+    <test name="Motorola purchase test" preserve-order="true">
+        <classes>
+            <class name="co.deepa.checkoutflow.MotoroloPurchase"/>
         </classes>
     </test> <!-- Test -->
 </suite>

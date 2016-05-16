@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+    <Properties>
+        <Property name="logdir">C:\Users\admin\Documents\log\</Property>
+    </Properties>
+    <Appenders>
+        <Console name="CONSOLE" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{ISO8601} | %-5level | %logger{1} | %line | %m%n"/>
+        </Console>
+        <RollingFile name="FILE" fileName="${logdir}/Amazon_Test.log"
+                     filePattern="${logdir}/test-%d{yyyy-MM-dd}-%i.log">
+            <PatternLayout>
+                <pattern>%d{ISO8601} | %-5level | %logger{1} | %line |%m%n</pattern>
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+                <SizeBasedTriggeringPolicy size="50 MB"/>
+            </Policies>
+        </RollingFile>
+    </Appenders>
+
+    <Loggers>
+        <Root level="DEBUG" additivity="false">
+            <AppenderRef ref="CONSOLE"/>
+            <AppenderRef ref="FILE"/>
+        </Root>
+    </Loggers>
+</Configuration>
